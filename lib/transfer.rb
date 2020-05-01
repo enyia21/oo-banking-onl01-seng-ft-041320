@@ -29,8 +29,9 @@ class Transfer
       sender.deposit(-self.amount)
       receiver.deposit(self.amount)
       self.status = "complete"
-    elsif sender.valid? && receiver.valid? == false || sender.status == "rejected"
+    elsif sender.valid? && receiver.valid? == false
       "Transaction rejected. Please check your account balance."
+      self.status = "rejected"
     else
       self.status
     end
