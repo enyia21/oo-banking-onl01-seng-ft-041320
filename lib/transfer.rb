@@ -33,4 +33,11 @@ class Transfer
     end
     # binding.pry
   end
+
+  def reverse_transfer
+    if self.status = "complete"
+      receiver.deposit(-self.amount)
+      sender.deposit(self.amount)
+    end
+  end
 end
