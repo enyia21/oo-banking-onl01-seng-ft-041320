@@ -24,7 +24,7 @@ class Transfer
       self.status = "rejected"
       sender.status = "rejected"
     end
-    binding.pry
+    # binding.pry
     if status == "pending" && sender.valid? && receiver.valid?
       sender.deposit(-self.amount)
       receiver.deposit(self.amount)
@@ -34,6 +34,6 @@ class Transfer
     else
       self.status
     end
-    binding.pry
+    # binding.pry
   end
 end
