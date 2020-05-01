@@ -35,5 +35,6 @@ class Transfer
     else
       self.status
     end
+    binding.pry
   end
 end
