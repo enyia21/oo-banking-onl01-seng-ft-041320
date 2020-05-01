@@ -38,6 +38,7 @@ class Transfer
     if self.status = "complete"
       receiver.deposit(-self.amount)
       sender.deposit(self.amount)
+      self.status = "reversed"
     end
   end
 end
