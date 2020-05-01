@@ -23,14 +23,13 @@ class Transfer
     if sender.balance < self.amount
       self.status = "rejected"
       sender.status = "rejected"
-
     end
     binding.pry
     if status == "pending" && sender.valid? && receiver.valid?
       sender.deposit(-self.amount)
       receiver.deposit(self.amount)
       self.status = "complete"
-    elsif sender.valid? && receiver.valid? == false
+    elsif sender.valid? && receiver.valid? == false || sender.status == "rejected"
       "Transaction rejected. Please check your account balance."
     else
       self.status
